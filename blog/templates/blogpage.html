@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Blog</h2>
+    <strong>User : {{user_context}}</strong>
+    <ul>
+
+        {% for post in post_list %}
+        <li>
+          <a href="{{ post.get_absolute_url }}">{{ post.title }}</a> ({{post.created_on}}) — <a href="{% url 'postsbyauthor' post.author.pk %}">{{ post.author }}</a>
+        </li>
+        {% endfor %}
+  
+      </ul>
+{% endblock %}

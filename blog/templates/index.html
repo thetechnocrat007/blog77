@@ -4,9 +4,15 @@
     <h2>home</h2>
 
     <h3>User is {{user}}</h3>
+
+    <p> <a href="{% url 'allposts'%}"><strong>Go to BLOG</strong></a></p>
+    <hr>
     
     <form method="POST" action="{% url 'logout' %}">
         {% csrf_token %}
         <button type="submit">Logout</button>
     </form>
+
+
+
 {% endblock %}
